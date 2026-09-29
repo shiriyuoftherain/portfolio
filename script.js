@@ -3,16 +3,20 @@ const GAMES = [
     url: "https://www.roblox.com/games/81186128195438/Unseenia",
     role: "Owner & Lead Developer",
     name: "Unseenia",
+    since: 1766188800,
     icon: "assets/icons/unseenia.png",
     banner: "assets/backgrounds/UnseeniaBanner.png",
+    dim: 0.45,
   },
 
   {
     url: "https://www.roblox.com/games/120500302070128/EVERWIND",
-    role: "Full-stack Developer",
+    role: "Head Developer",
     name: "Everwind",
+    since: 1782345600,
     icon: "assets/icons/everwind.png",
     banner: "assets/backgrounds/breadfruit.png",
+    dim: 0.9,
     discord: "https://discord.gg/everwind"
   },
 ];
@@ -29,8 +33,13 @@ GAMES.forEach(entry => {
   a.className = 'game-card';
   // if (entry.name === 'Unseenia') a.classList.add('highlight');
   if (entry.banner) {
-  a.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('${entry.banner}')`;
+  const dim = entry.dim ?? 0.75
+  a.style.backgroundImage = `linear-gradient(rgba(0,0,0,${dim}), rgba(0,0,0,${dim})), url('${entry.banner}')`;
+  if (entry.bannerPos) a.style.backgroundPosition = entry.bannerPos;
 }
+  const since = entry.since
+  ? new Date(entry.since * 1000).toLocaleDateString('en', { month: 'short', year: 'numeric' })
+  : null;
   a.innerHTML = `
   <span class="corner tl"></span>
   <span class="corner tr"></span>
@@ -41,7 +50,8 @@ GAMES.forEach(entry => {
     </div>
     <div>
       <p class="game-name">${entry.name}</p>
-      <p class="game-role">${entry.role}</p>
+      <p class="game-role"><img src="assets/icons/Role.png" alt="" />${entry.role}</p>
+      ${since ? `<p class="game-since"><img src="assets/icons/Calendar.png" alt="" />${since}</p>` : ''}
     </div>`;
   wrap.appendChild(a);
  
@@ -134,9 +144,7 @@ document.querySelectorAll('.card').forEach(card => {
 });
 
 viewer?.addEventListener('click', e => {
-  if (e.target === viewer || (e.target instanceof Element && (e.target.closest('[data-close]') || e.target.closest('.viewer-close')))) {
-    closeViewer();
-  }
+  if (e.target !== viewerContentMedia) closeViewer();
 });
 
 viewer?.addEventListener('wheel', e => {

@@ -214,6 +214,7 @@ a.game-card .corner {
   background: url('assets/deco/cornerarrowgold.png') center/contain no-repeat;
   pointer-events: none;
 }
+
 .corner.bl { bottom: -5px; left: -5px; }
 .corner.tl { top: -5px; left: -5px; transform: scaleY(-1); }
 .corner.tr { top: -5px; right: -5px; transform: scale(-1); }
@@ -241,6 +242,7 @@ a.game-card:hover {
   overflow: hidden; flex-shrink: 0; background: #0D1A35;
   display: grid; place-items: center;
   border-radius: var(--radius);
+  background: rgba(0, 0, 0, 0);
 }
 
 .game-icon img { width: 100%; height: 100%; object-fit: cover; display: block; }
@@ -250,7 +252,10 @@ a.game-card:hover {
   font-size: 17px; font-weight: 600; color: var(--text);
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
-.game-role { font-size: 13px; color: var(--accent); margin-top: 2px; }
+
+.game-role { font-size: 13px; color: var(--accent); margin-top: 2px; display: flex; align-items: center; gap: 6px; }
+.game-since { font-size: 12px; color: var(--muted); margin-top: 2px; display: flex; align-items: center; gap: 6px; }
+.game-role img, .game-since img { width: 14px; height: 14px; object-fit: contain; }
 
 .discord-join-btn {
   display: inline-flex; align-items: center; gap: 8px;
@@ -352,10 +357,9 @@ a.game-card:hover {
 .media-viewer.active { display: flex; }
 
 .viewer-panel {
-  position: relative; width: min(100%, 1120px); max-height: 100%;
-  background: rgba(34, 18, 8, 0.98); border: 1px solid rgba(255,255,255,0.10);
-  border-radius: 0; overflow: hidden; box-shadow: 0 40px 120px rgba(0,0,0,0.45);
-  border-radius: var(--radius);
+  background: transparent;
+  border: none;
+  box-shadow: none;
 }
 
 .viewer-backdrop { position: absolute; inset: 0; cursor: zoom-out; }
@@ -388,16 +392,17 @@ a.game-card:hover {
 
 .placeholder svg { opacity: 0.42; }
 
-.placeholder-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.45; }
+.placeholder-label { font-size: 11px; letter-spacing: 0.12em; text-transform: none; opacity: 0.45; }
 
 .card-body { padding: 16px 18px 20px; flex: 1; display: flex; flex-direction: column; justify-content: center; }
 
 .card-title {
   background: rgba(59,45,28,0.85);
   color: #f2e6cc;
-  font-family: 'Cinzel', serif;
+  font-family: 'Georgia', serif;
   font-weight: 600;
   font-size: 17px;
+  text-transform: none;
   padding: 12px 44px 12px 18px;
   border-bottom: 2px solid #6b4f2e;
   position: relative;
@@ -410,10 +415,11 @@ a.game-card:hover {
 
 .tag {
   font-size: 12px; font-weight: 600; letter-spacing: 0.06em;
-  text-transform: uppercase; padding: 4px 10px; border-radius: 0;
+  text-transform: none; padding: 4px 10px; border-radius: 0;
   background: rgba(59, 45, 28, 0.12);
   border: 1px solid #8a6a3f;
   color: #3a2b17;
+  border-radius: var(--radius);
 }
 
 .empty-state {
