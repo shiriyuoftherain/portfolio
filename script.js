@@ -6,7 +6,7 @@ const GAMES = [
     since: 1766188800,
     icon: "assets/icons/unseenia.png",
     banner: "assets/backgrounds/UnseeniaBanner.png",
-    dim: 0.45,
+    dim: 0.6,
   },
 
   {
@@ -16,8 +16,19 @@ const GAMES = [
     since: 1782345600,
     icon: "assets/icons/everwind.png",
     banner: "assets/backgrounds/breadfruit.png",
-    dim: 0.9,
+    dim: 0.85,
     discord: "https://discord.gg/everwind"
+  },
+
+  {
+    url: "https://www.roblox.com/games/0",
+    role: "Moderator",
+    name: "Arcane Atelier",
+    since: 1791507480,
+    icon: "assets/icons/ArcaneAtelier.png",
+    banner: "assets/backgrounds/ArcaneAtelierBanner.png",
+    dim: 0.75,
+    discord: "https://discord.gg/arcaneatelier"
   },
 ];
 
@@ -188,6 +199,6 @@ function spawnStars() {
   }
 }
 
-window.addEventListener('load', () => {
-  spawnStars();
-});
+//window.addEventListener('load', () => {
+  //spawnStars();
+//});

@@ -18,7 +18,7 @@
 
 html { scroll-behavior: smooth; }
 body {
-  background: linear-gradient(rgba(2, 8, 20, 0.72), rgba(2, 8, 20, 0.72)), url('assets/backgrounds/bg.png') center/cover no-repeat fixed;
+  background: #523925;
   color: var(--text);
   font-family: 'Georgia', serif;
   font-weight: 600;
@@ -29,6 +29,14 @@ body {
   cursor: default;
 }
 a, button { cursor: pointer; }
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(rgba(2, 8, 20, 0.72), rgba(2, 8, 20, 0.72)), url('assets/backgrounds/bg.png') center/cover no-repeat;
+}
 
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
