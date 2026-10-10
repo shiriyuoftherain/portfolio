@@ -33,7 +33,11 @@ a, button { cursor: pointer; }
 body::before {
   content: '';
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100lvh;
   z-index: -1;
   background: linear-gradient(rgba(2, 8, 20, 0.72), rgba(2, 8, 20, 0.72)), url('assets/backgrounds/bg.png') center/cover no-repeat;
 }
@@ -274,10 +278,47 @@ a.game-card:hover {
   color: #b1b5bf;
   transition: background 0.2s;
   width: fit-content;
-  margin: 14px auto 0;
+  margin: 4px auto 0;
   border-radius: var(--radius);
 }
 .discord-join-btn:hover { background: url('assets/buttons/blue_dc_button.png') center/cover; filter: brightness(1.1); }
+
+.tools-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  background: rgba(0, 0, 0, 0.24);
+  padding: 16px 20px;
+  border-radius: var(--radius);
+}
+.tool {
+  text-decoration: none;
+  transition: transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: 72px;
+}
+
+.tool:hover {
+  transform: translateY(-2px);
+}
+.tool:hover p {
+  color: var(--text);
+}
+
+.tool img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+.tool p {
+  font-size: 12px;
+  color: var(--muted);
+  text-align: center;
+  line-height: 1.2;
+}
 
 .filter-bar { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 36px; align-items: center; }
 
@@ -438,6 +479,9 @@ a.game-card:hover {
 .empty-state.visible { display: block; }
 
 @media (max-width: 600px) {
+
+.hero-line { display: none; }
+
 .card > .card-content { flex-direction: column; }
   .card-media { width: 100%; }
 

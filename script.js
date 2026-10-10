@@ -32,6 +32,27 @@ const GAMES = [
   },
 ];
 
+const tools = [
+  {name: "Roblox Studio", icon: "assets/icons/studio.png", url: "https://create.roblox.com"},
+  {name: "Rojo", icon: "assets/icons/rojo.png", url: "https://rojo.space"},
+  {name: "VSCodium", icon: "assets/icons/vscodium.png", url: "https://vscodium.com"},
+  {name: "Blender", icon: "assets/icons/blender.png", url: "https://www.blender.org/download"},
+  {name: "Photopea", icon: "assets/icons/photopea.png", url: "https://www.photopea.com"},
+  {name: "Git / GitHub", icon: "assets/icons/github.png", url: "https://github.com"},
+  {name: "Discord", icon: "assets/icons/discordtool.png", url: "https://discord.com/download"},
+]
+
+const toolsRow = document.getElementById('toolsRow');
+tools.forEach(t => {
+  const el = document.createElement('a');
+  el.className = 'tool';
+  el.href = t.url;
+  el.target = '_blank';
+  el.rel = 'noopener';
+  el.innerHTML = `<img src="${t.icon}" alt="${t.name}" /><p>${t.name}</p>`;
+  toolsRow.appendChild(el);
+});
+
 const row = document.getElementById('gamesRow');
 GAMES.forEach(entry => {
   const wrap = document.createElement('div');
