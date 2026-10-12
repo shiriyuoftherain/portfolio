@@ -106,6 +106,7 @@ const clrBtn = document.getElementById('clearBtn');
 const empty = document.getElementById('emptyState');
 const active = new Set();
 
+/*
 function filter() {
   let n = 0;
   cards.forEach(c => {
@@ -128,6 +129,7 @@ clrBtn.addEventListener('click', () => {
   btns.forEach(b => b.classList.remove('active'));
   filter();
 });
+*/
 
 const viewer = document.getElementById('mediaViewer');
 const viewerMedia = document.getElementById('viewerMedia');

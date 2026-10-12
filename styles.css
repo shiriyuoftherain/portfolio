@@ -269,6 +269,13 @@ a.game-card:hover {
 .game-since { font-size: 12px; color: var(--muted); margin-top: 2px; display: flex; align-items: center; gap: 6px; }
 .game-role img, .game-since img { width: 14px; height: 14px; object-fit: contain; }
 
+.coming-soon {
+  background: rgba(0, 0, 0, 0.24);
+  padding: 10px 16px;
+  border-radius: var(--radius);
+  color: var(--muted);
+}
+
 .discord-join-btn {
   display: inline-flex; align-items: center; gap: 8px;
   padding: 0px 20px;
@@ -555,6 +562,7 @@ a.game-card {
 .filter-bar {
   justify-content: center;
 }
+
 }
 
 @media (prefers-reduced-motion: reduce) { .card, a.game-card { transition: none; } }
