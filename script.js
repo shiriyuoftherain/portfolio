@@ -22,7 +22,7 @@ const GAMES = [
 
   {
     url: "https://www.roblox.com/games/0",
-    role: "Moderator",
+    role: "Moderator & QA Tester",
     name: "Arcane Atelier",
     since: 1791507480,
     icon: "assets/icons/ArcaneAtelier.png",
